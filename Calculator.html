@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using JS</title>
+    <link rel="stylesheet" href ="style.css">
+</head>
+<!--Line 1 and 2 will always the be there 1 tell the browser that we're using html5 and line 2 is the language this should be in-->
+<!--Line 4 is to help the webpage be accessible to other devices. Line 5 is the title you will see when you're trying to click into it.-->
+<!--Line 6 is to link back to the CSS file when it on a different file-->
+<body>
+
+<div class="container">
+    <div class="calculator">
+<!--Line 13 the element div which is short for divison which creates a block level for a container. -->
+<!--Line 14 tells the broswer that I want to create a calculator within the container created by Line 13.-->
+        <form>
+            <!--A form is used to collect and submit info to the server to be processed-->
+            <div class="display">
+                <input type="text" name="display">
+            </div>
+            <!-- Line 19 ot 21 create a space a box for entering inputs and the div seperates it from the buttons-->
+            <div>
+                <input type="button" value="AC" onclick="display.value = ''" class="operator">
+                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+                <input type="button" value="." onclick="display.value += '.'" class="operator">
+                <input type="button" value="/" onclick="display.value += '/'" class="operator">
+            </div>
+            <!--The div puts this on their on row. Line 24 creates a button that once you press it clears the input box.-->
+            <!--Line 25  creates a button that deletes the lasting thing added to the input box. Line 26 is button for decimals-->
+            <!--Line 27 creates a button for divison-->
+            <div>
+                <input type="button" value="7" onclick="display.value += '7'">
+                <input type="button" value="8" onclick="display.value += '8'">
+                <input type="button" value="9" onclick="display.value += '9'">
+                <input type="button" value="*" onclick="display.value += '*'" class="operator">
+            </div>
+            <!-- The JS onclick = "display.value = "" " the the code what it should be showing once the button associated to has been clicked on-->
+            <!--The class="operator" is used to help me change the color of the characters on those to a different color usig CSS-->
+            <div>
+                <input type="button" value="4" onclick="display.value += '4'">
+                <input type="button" value="5" onclick="display.value += '5'">
+                <input type="button" value="6" onclick="display.value += '6'">
+                <input type="button" value="-" onclick="display.value += '-'" class="operator">
+            </div>
+            <div>
+                <input type="button" value="1" onclick="display.value += '1'">
+                <input type="button" value="2" onclick="display.value += '2'">
+                <input type="button" value="3" onclick="display.value += '3'">
+                <input type="button" value="+" onclick="display.value += '+'" class="operator">
+            </div>
+            <div>
+                <input type="button" value="00" onclick="display.value += '00'">
+                <input type="button" value="0" onclick="display.value += '0'">
+                <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal operator">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
